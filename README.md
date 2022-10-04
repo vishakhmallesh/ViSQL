@@ -28,25 +28,26 @@ Lighthouse is used to measure performance.
 
 ### Before Optimisation
 
-![Before Optimization](/screenshots/before.png)
+Click [here](https://tinyurl.com/before-optimization) to see performance score.
 
 ### After Optimisation
 
-![After Optimization](/screenshots/after.png)
+Click [here](https://tinyurl.com/after-optimization) to see performance score.
 
 #### Optimizations
 
 * Lazy loading with React.lazy() and React.Suspense.
 * Minification of CSS and JS files.
+* Asset optimization provided by Netlify
 * Optimisations for other lighthouse categories.
 
 ## Features Update for Upcoming Commit
 
-* Phone Compatability.
 * Customised right-click.
 * Add a new tab and close them. 
 * Importing feature. 
 * Collaboration features.
+* Phone Compatability and resize window with dragging.
 * Automatic formatting and code suggestions.
 * View table contents.
 * Table relationship. 
