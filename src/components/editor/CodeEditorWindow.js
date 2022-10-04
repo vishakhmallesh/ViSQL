@@ -2,7 +2,9 @@
 
 import React, { useState, Suspense } from "react";
 
-import Editor from "@monaco-editor/react";
+// import Editor from "@monaco-editor/react";
+
+const Editor = React.lazy(() => import("@monaco-editor/react"));
 
 const CodeEditorWindow = ({
   onChange,
