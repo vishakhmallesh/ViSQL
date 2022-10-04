@@ -1,5 +1,3 @@
-// LANDING.js
-
 import React, { useState, Suspense, lazy } from "react";
 const Editor = lazy(() => import("./editor/Editor"));
 import ExplorerWindow from "./explorer/ExplorerWindow";

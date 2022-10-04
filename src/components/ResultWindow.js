@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -84,7 +84,7 @@ const rowsTwo = [
 const rowsThree = [{ id: 1, lastName: "Snow", firstName: "Jon", age: 35 }];
 
 export default function ResultWindow(props) {
-  const [value, setValue] = React.useState(props.tabNum);
+  const [value, setValue] = useState(props.tabNum);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

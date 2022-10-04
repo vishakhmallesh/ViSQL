@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, Suspense, lazy } from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 
-const CodeEditorWindow = React.lazy(() => import("./CodeEditorWindow"));
+const CodeEditorWindow = lazy(() => import("./CodeEditorWindow"));
 
 import AddIcon from "@mui/icons-material/Add";
 
@@ -45,7 +45,7 @@ function a11yProps(index) {
 }
 
 export default function Editor(props) {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -58,7 +58,7 @@ export default function Editor(props) {
         <Tabs
           value={value}
           onChange={handleChange}
-          aria-label="basic tabs example"
+          aria-label="editor tabs"
         >
           <Tab
             label="Untitled-1"
@@ -70,6 +70,7 @@ export default function Editor(props) {
             }
             iconPosition="end"
             {...a11yProps(0)}
+            id="tab-1"
           />
           <Tab
             label="Example-1"
@@ -81,6 +82,7 @@ export default function Editor(props) {
             }
             iconPosition="end"
             {...a11yProps(0)}
+            id="tab-2"
           />
           <Tab
             label="Example-2"
@@ -92,6 +94,7 @@ export default function Editor(props) {
             }
             iconPosition="end"
             {...a11yProps(0)}
+            id="tab-3"
           />
           <IconButton className="add-tab">
             <AddIcon fontSize="small" />
@@ -99,31 +102,31 @@ export default function Editor(props) {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <React.Suspense fallback={<div>Loading</div>}>
+        <Suspense fallback={<div>Loading</div>}>
           <CodeEditorWindow
             language="sql"
             viewHorizontal={props.viewHorizontal}
             code={`/*Enter your query here*/ \n\nSELECT * from data_name;`}
           />
-        </React.Suspense>
+        </Suspense>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <React.Suspense fallback={<div>Loading</div>}>
+        <Suspense fallback={<div>Loading</div>}>
           <CodeEditorWindow
             language="sql"
             viewHorizontal={props.viewHorizontal}
             code="SELECT * from data_name WHERE ID < 5;"
           />
-        </React.Suspense>
+        </Suspense>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <React.Suspense fallback={<div>Loading</div>}>
+        <Suspense fallback={<div>Loading</div>}>
           <CodeEditorWindow
             language="sql"
             viewHorizontal={props.viewHorizontal}
             code="SELECT * from data_name WHERE ID < 2;"
           />
-        </React.Suspense>
+        </Suspense>
       </TabPanel>
     </div>
   );

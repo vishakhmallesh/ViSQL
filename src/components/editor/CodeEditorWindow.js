@@ -1,9 +1,4 @@
-// CodeEditorWindow.js
-
 import React, { useState, Suspense, lazy } from "react";
-
-// import Editor from "@monaco-editor/react";
-
 const Editor = lazy(() => import("@monaco-editor/react"));
 
 const CodeEditorWindow = ({

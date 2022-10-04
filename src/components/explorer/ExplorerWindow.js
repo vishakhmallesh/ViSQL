@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -11,8 +11,6 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import IconButton from "@mui/material/IconButton";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import { CardActionArea } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { useDemoData } from "@mui/x-data-grid-generator";
@@ -30,7 +28,6 @@ import CalendarViewMonthIcon from "@mui/icons-material/CalendarViewMonth";
 import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
 import PushPinIcon from "@mui/icons-material/PushPin";
 import CloseIcon from "@mui/icons-material/Close";
-import CodeIcon from "@mui/icons-material/Code";
 
 // TABPANEL
 function TabPanel(props) {
@@ -109,10 +106,10 @@ const history = function (cards){
 
 export default function ExplorerWindow(props) {
   // FOR TABS
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   //PIN
-  const [pinned, setPinned] = React.useState(false);
+  const [pinned, setPinned] = useState(false);
 
   const handleChangeTabs = (event, newValue) => {
     setValue(newValue);
@@ -128,7 +125,7 @@ export default function ExplorerWindow(props) {
     editable: true,
   });
 
-  const [state, setState] = React.useState({ right: false });
+  const [state, setState] = useState({ right: false });
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -224,7 +221,7 @@ export default function ExplorerWindow(props) {
             variant="scrollable"
             value={value}
             onChange={handleChangeTabs}
-            aria-label="Vertical tabs example"
+            aria-label="explorer tabs"
             // sx={{ color: "#2026D2" }}
           >
             <Tab icon={<StorageIcon />} {...a11yProps(0)} />
