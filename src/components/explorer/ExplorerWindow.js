@@ -177,7 +177,7 @@ export default function ExplorerWindow(props) {
         </CardActionArea>
         {props.icon === "pin" ? (
           <div className="pin">
-            <IconButton onClick={handlePinClick}>
+            <IconButton onClick={handlePinClick} aria-label="pin query">
               {pinned ? (
                 <PushPinIcon sx={{ color: "#2026d2" }} />
               ) : (
@@ -224,9 +224,9 @@ export default function ExplorerWindow(props) {
             aria-label="explorer tabs"
             // sx={{ color: "#2026D2" }}
           >
-            <Tab icon={<StorageIcon />} {...a11yProps(0)} />
-            <Tab icon={<BookmarkIcon />} {...a11yProps(1)} />
-            <Tab icon={<HistoryIcon />} {...a11yProps(2)} />
+            <Tab icon={<StorageIcon />} {...a11yProps(0)} aria-label="explorer" />
+            <Tab icon={<BookmarkIcon />} {...a11yProps(1)} aria-label="saved queries" />
+            <Tab icon={<HistoryIcon />} {...a11yProps(2)} aria-label="run history" />
           </Tabs>
         </div>
 

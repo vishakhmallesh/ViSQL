@@ -96,12 +96,12 @@ export default function Editor(props) {
             {...a11yProps(0)}
             id="tab-3"
           />
-          <IconButton className="add-tab">
+          <IconButton className="add-tab" aria-label="new tab">
             <AddIcon fontSize="small" />
           </IconButton>
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0} id="1st tab editor">
         <Suspense fallback={<div>Loading</div>}>
           <CodeEditorWindow
             language="sql"
@@ -110,7 +110,7 @@ export default function Editor(props) {
           />
         </Suspense>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1} id="2nd tab editor">
         <Suspense fallback={<div>Loading</div>}>
           <CodeEditorWindow
             language="sql"
@@ -119,7 +119,7 @@ export default function Editor(props) {
           />
         </Suspense>
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={2} id="3rd tab editor">
         <Suspense fallback={<div>Loading</div>}>
           <CodeEditorWindow
             language="sql"
