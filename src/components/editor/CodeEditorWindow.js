@@ -1,13 +1,13 @@
 import React, { useState, Suspense, lazy } from "react";
 const Editor = lazy(() => import("@monaco-editor/react"));
 
-const CodeEditorWindow = ({
+export default function CodeEditorWindow({
   onChange,
   language,
   code,
   theme,
   viewHorizontal,
-}) => {
+}) {
   const [value, setValue] = useState(code || "");
 
   const handleEditorChange = (value) => {
@@ -25,10 +25,9 @@ const CodeEditorWindow = ({
         language={language}
         value={value}
         theme={theme}
-        defaultValue="// some comment"
+        defaultValue="// enter query here."
         onChange={handleEditorChange}
       />
     </Suspense>
   );
-};
-export default CodeEditorWindow;
+}

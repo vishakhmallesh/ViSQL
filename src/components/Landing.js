@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import Tooltip from "@mui/material/Tooltip";
 
-const Landing = () => {
+export default function Landing(){
   const [horizontal, setHorizontal] = useState(true);
 
   const [bookmark, setBookmark] = useState(false);
@@ -211,4 +211,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+

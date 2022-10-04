@@ -1,14 +1,22 @@
 body {
   background-color: #e8ebed;
   margin: 0;
+  font-family: sans-serif;
 }
 
 * {
   box-sizing: border-box;
 }
 
-.App {
-  font-family: sans-serif;
+.phones{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.phones p{
+  text-align: center;
 }
 
 .landing-wrapper {
