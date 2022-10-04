@@ -28,11 +28,11 @@ Lighthouse is used to measure performance.
 
 ### Before Optimisation
 
-![Before Optimization](/screenshots/before.png)
+![Before Optimization](screenshots/before.png)
 
 ### After Optimisation
 
-![After Optimization](/screenshots/after.png)
+![After Optimization](screenshots/after.png)
 
 #### Optimizations
 
