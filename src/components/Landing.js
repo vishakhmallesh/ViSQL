@@ -24,6 +24,13 @@ export default function Landing(){
 
   const [runHistory, setRunHistory] = useState([]);
 
+  const checkDevice = function() {
+    let size = document.querySelector("html").offsetWidth;
+    size < 1030 ? setHorizontal(false) : setHorizontal(true);
+  }
+  window.onload = checkDevice;
+  window.onresize = checkDevice;
+
   const handleViewModeHorizontal = () => setHorizontal(true);
 
   const handleViewModeVertical = () => setHorizontal(false);
@@ -76,7 +83,6 @@ export default function Landing(){
   };
 
   return (
-    <>
       <div className="landing-wrapper">
         <div className="explorer-wrapper">
           <ExplorerWindow bookmark={bookmark} runHistory={runHistory} />
@@ -207,7 +213,6 @@ export default function Landing(){
           </div>
         </div>
       </div>
-    </>
   );
 };
 
