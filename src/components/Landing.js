@@ -1,11 +1,10 @@
 // LANDING.js
 
-import React, { useState } from "react";
-import Editor from "./editor/Editor";
+import React, { useState, Suspense, lazy } from "react";
+const Editor = lazy(() => import("./editor/Editor"));
 import ExplorerWindow from "./explorer/ExplorerWindow";
 import ResultWindow from "./ResultWindow";
 import SpeedDial from "@mui/material/SpeedDial";
-import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import ImportContactsIcon from "@mui/icons-material/ImportContacts";
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -14,7 +13,7 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import LoadingButton from "@mui/lab/LoadingButton";
 import Button from "@mui/material/Button";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import Tooltip from '@mui/material/Tooltip';
+import Tooltip from "@mui/material/Tooltip";
 
 const Landing = () => {
   const [horizontal, setHorizontal] = useState(true);
@@ -39,18 +38,33 @@ const Landing = () => {
   };
 
   const pushHistory = function () {
-    if(runHistory.length === 5){
+    if (runHistory.length === 5) {
       runHistory.shift();
     }
     switch (tabNum) {
       case 0:
-        setRunHistory(runHistory.concat({name: "Untitled-1", code:"SELECT * FROM Customers;"}));
+        setRunHistory(
+          runHistory.concat({
+            name: "Untitled-1",
+            code: "SELECT * FROM Customers;",
+          })
+        );
         break;
       case 1:
-        setRunHistory(runHistory.concat({name: "Example-1", code:"SELECT * from data_name WHERE ID < 5;"}));
+        setRunHistory(
+          runHistory.concat({
+            name: "Example-1",
+            code: "SELECT * from data_name WHERE ID < 5;",
+          })
+        );
         break;
       case 2:
-        setRunHistory(runHistory.concat({name: "Example-2", code:"SELECT * from data_name WHERE ID < 2;"}));
+        setRunHistory(
+          runHistory.concat({
+            name: "Example-2",
+            code: "SELECT * from data_name WHERE ID < 2;",
+          })
+        );
         break;
     }
   };
@@ -118,15 +132,14 @@ const Landing = () => {
                 </Button>
               ) : (
                 <Tooltip title="Bookmarking disabled for sample queries">
-                <Button
-                  variant="contained"
-                  startIcon={<BookmarkIcon />}
-                  size="small"
-                  sx={{ marginRight: "5px" }}
-                  
-                >
-                  Bookmarked
-                </Button>
+                  <Button
+                    variant="contained"
+                    startIcon={<BookmarkIcon />}
+                    size="small"
+                    sx={{ marginRight: "5px" }}
+                  >
+                    Bookmarked
+                  </Button>
                 </Tooltip>
               )}
               <LoadingButton
@@ -146,7 +159,9 @@ const Landing = () => {
             className="editor-wrapper"
             style={horizontal ? { width: "49.8%" } : { width: "100%" }}
           >
-            <Editor viewHorizontal={horizontal} getTabNumber={getTabNumber} />
+            <Suspense fallback={<div>Editor is loading</div>}>
+              <Editor viewHorizontal={horizontal} getTabNumber={getTabNumber} />
+            </Suspense>
           </div>
           <div
             className="result-wrapper"
@@ -178,17 +193,19 @@ const Landing = () => {
             )}
           </div>
           <div className="footer">
-              <span>Time:</span> {isRunning ? <LoadingButton
-                  size="small"
-                  color="secondary"
-                  loading={true}
-                  loadingPosition="start"
-                  startIcon={<PlayArrowIcon />}
-                  variant="contained"
-                />:
-              " 2.56s"}
-                  
-               
+            <span>Time:</span>{" "}
+            {isRunning ? (
+              <LoadingButton
+                size="small"
+                color="secondary"
+                loading={true}
+                loadingPosition="start"
+                startIcon={<PlayArrowIcon />}
+                variant="contained"
+              />
+            ) : (
+              " 2.56s"
+            )}
           </div>
         </div>
       </div>
