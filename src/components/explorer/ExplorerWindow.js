@@ -161,7 +161,7 @@ export default function ExplorerWindow(props) {
 
   const Entities = function (props) {
     return (
-      <div className="files">
+      <div className="files d-f ai-c jc-sb">
         <CardActionArea
           sx={{
             borderRadius: "2px",
@@ -170,7 +170,7 @@ export default function ExplorerWindow(props) {
           }}
           onClick={toggleDrawer("right", true)}
         >
-          <div className="file-name">
+          <div className="file-name d-f ai-c">
             <CalendarViewMonthIcon />
             <span>{props.name}</span>
           </div>
@@ -198,8 +198,8 @@ export default function ExplorerWindow(props) {
 
   return (
     <div className="">
-      <div className="explorer-header">
-        <div className="database-name">ONLINE_RETAIL</div>
+      <div className="explorer-header d-f jc-sb">
+        <div className="database-name d-f ai-c">ONLINE_RETAIL</div>
         <div>
           <CreateNewFolderIcon sx={{ fontSize: "20px" }} />
           <CachedIcon sx={{ fontSize: "20px", marginLeft: "10px" }} />
@@ -214,7 +214,7 @@ export default function ExplorerWindow(props) {
         </div>
       </div>
 
-      <div className="explorer-tab-wrapper">
+      <div className="explorer-tab-wrapper d-f ai-s">
         <div className="tabs">
           <Tabs
             orientation="vertical"
@@ -278,7 +278,7 @@ export default function ExplorerWindow(props) {
             <QueryCard name="Example-2" code="SELECT * from data_name WHERE ID < 2;" />
           </TabPanel>
           <TabPanel value={value} index={2}>
-          <div className="history-wrapper">
+          <div className="history-wrapper d-f">
             {props.runHistory.length !==0 ? (
               props.runHistory.map(history)
               

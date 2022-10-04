@@ -83,12 +83,12 @@ export default function Landing(){
   };
 
   return (
-      <div className="landing-wrapper">
+      <div className="landing-wrapper d-f ai-s">
         <div className="explorer-wrapper">
           <ExplorerWindow bookmark={bookmark} runHistory={runHistory} />
         </div>
-        <div className="editor-result-wrapper">
-          <div className="editor-result-header">
+        <div className="editor-result-wrapper d-f jc-sb">
+          <div className="editor-result-header d-f jc-sb">
             <div className="view-mode">
               <SpeedDial
                 ariaLabel="SpeedDial basic example"

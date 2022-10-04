@@ -8,9 +8,23 @@ body {
   box-sizing: border-box;
 }
 
-.phones{
+.d-f{
   display: flex;
+}
+
+.ai-c{
   align-items: center;
+}
+
+.ai-s{
+  align-items: stretch;
+}
+
+.jc-sb{
+  justify-content: space-between;
+}
+
+.phones{
   justify-content: center;
   height: 110vh;
 }
@@ -20,10 +34,7 @@ body {
 }
 
 .landing-wrapper {
-  display: flex;
   flex-flow: row nowrap;
-  /* justify-content: space-between; */
-  align-items: stretch;
   min-height: 100vh;
 }
 
@@ -34,18 +45,14 @@ body {
 }
 
 .explorer-header {
-  padding: 10px 10px;
-  display: flex;
+  padding: 10px;
   flex-wrap: wrap;
-  justify-content: space-between;
   border-bottom: 1px solid rgb(209, 209, 209);
 }
 
 .database-name {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #05072b;
-  display: flex;
-  align-items: center;
 }
 
 .explorer-search {
@@ -67,10 +74,7 @@ body {
 
 .explorer-tab-wrapper {
   margin-top: 0.5rem;
-  display: flex;
   flex-flow: row nowrap;
-  /* justify-content: space-between; */
-  align-items: stretch;
   min-height: calc(100vh - 100px - 3rem);
 }
 
@@ -114,15 +118,10 @@ body {
 }
 
 .files {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   transform: translateX(5px);
 }
 
 .file-name {
-  display: flex;
-  align-items: center;
   width: 100%;
   flex-grow: 4;
 }
@@ -136,7 +135,7 @@ body {
 }
 
 .file-name span {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .hr {
@@ -177,23 +176,18 @@ body {
 }
 
 .history-wrapper {
-  display: flex;
   flex-direction: column-reverse;
 }
 
 .editor-result-wrapper {
   padding: 0;
   width: 80%;
-  display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .editor-result-header {
   width: calc(100% + 16px);
-  display: flex;
   flex-direction: row;
-  justify-content: space-between;
   background-color: #fff;
   padding: 8px 0 10px;
 }
