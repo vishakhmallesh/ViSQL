@@ -42,7 +42,7 @@ Lighthouse is used to measure performance.
 
 ## Features Update for Upcoming Commit
 
-* Phone Compatability.
+* Phone Compatability and resize window with dragging.
 * Customised right-click.
 * Add a new tab and close them. 
 * Importing feature. 
