@@ -33,10 +33,14 @@ body {
   text-align: center;
 }
 
+/* LANDING SECTION */
+
 .landing-wrapper {
   flex-flow: row nowrap;
   min-height: 100vh;
 }
+
+/* EXPLORER SECTION */
 
 .explorer-wrapper {
   width: 20%;
@@ -179,6 +183,8 @@ body {
   flex-direction: column-reverse;
 }
 
+/* EDITOR AND RESULT SECTION */
+
 .editor-result-wrapper {
   padding: 0;
   width: 80%;
@@ -213,6 +219,8 @@ body {
   padding-top: 5px;
   padding-right: 8px;
 }
+
+/* EDITOR SECTION */
 
 .editor-wrapper {
   width: 49.8%;
@@ -260,6 +268,7 @@ body {
   box-shadow: rgb(0 0 0 / 8%) -3px 0px 3px 0px;
 }
 
+/* RESULT SECTION */
 .result-wrapper {
   width: 49.8%;
   padding-right: 8px;

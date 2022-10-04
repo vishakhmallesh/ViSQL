@@ -1,3 +1,5 @@
+//This file provides navigational feature to the application like tables, pinned tables, bookmark and run history
+
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";

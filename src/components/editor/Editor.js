@@ -1,3 +1,5 @@
+//Editor pannel with 3 tabs to support multiple sql queries
+
 import React, { useState, Suspense, lazy } from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";

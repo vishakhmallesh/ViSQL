@@ -14,16 +14,18 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import Tooltip from "@mui/material/Tooltip";
 
 export default function Landing(){
-  const [horizontal, setHorizontal] = useState(true);
+
+  const [horizontal, setHorizontal] = useState(true); //view mode state horizontal or vertical
 
   const [bookmark, setBookmark] = useState(false);
 
-  const [isRunning, setIsRunning] = useState(false);
+  const [isRunning, setIsRunning] = useState(false); 
 
   const [tabNum, setTabNum] = useState(0);
 
   const [runHistory, setRunHistory] = useState([]);
 
+  //If screen width is smaller then display vertical mode
   const checkDevice = function() {
     let size = document.querySelector("html").offsetWidth;
     size < 1030 ? setHorizontal(false) : setHorizontal(true);
@@ -38,10 +40,13 @@ export default function Landing(){
   const handleBookmark = () =>
     bookmark ? setBookmark(false) : setBookmark(true);
 
+  //Function to retrive current query tab
   const getTabNumber = function (num) {
     setTabNum(num);
   };
 
+  //Function to check which query is being executed and store it in history
+  //Store only the last 5 queries that has been executed.
   const pushHistory = function () {
     if (runHistory.length === 5) {
       runHistory.shift();

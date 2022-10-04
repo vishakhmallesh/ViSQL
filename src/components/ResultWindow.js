@@ -1,3 +1,5 @@
+//Result pannel with 3 tabs to that shows respective queries output
+
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
