@@ -42,11 +42,11 @@ Click [here](https://tinyurl.com/after-optimization) to see performance score.
 
 ## Features Update for Upcoming Commit
 
-* Phone Compatability and resize window with dragging.
 * Customised right-click.
 * Add a new tab and close them. 
 * Importing feature. 
 * Collaboration features.
+* Phone Compatability and resize window with dragging.
 * Automatic formatting and code suggestions.
 * View table contents.
 * Table relationship. 
