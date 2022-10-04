@@ -6,7 +6,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import CodeEditorWindow from "./CodeEditorWindow";
+// import CodeEditorWindow from "./CodeEditorWindow";
+const CodeEditorWindow = React.lazy(() => import("./CodeEditorWindow"));
 
 import AddIcon from "@mui/icons-material/Add";
 
@@ -80,7 +81,7 @@ export default function Editor(props) {
             }
             iconPosition="end"
             {...a11yProps(0)}
-          /> 
+          />
           <Tab
             label="Example-2"
             icon={
@@ -91,32 +92,38 @@ export default function Editor(props) {
             }
             iconPosition="end"
             {...a11yProps(0)}
-          /> 
+          />
           <IconButton className="add-tab">
             <AddIcon fontSize="small" />
           </IconButton>
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <CodeEditorWindow
-          language="sql"
-          viewHorizontal={props.viewHorizontal}
-          code={`/*Enter your query here*/ \n\nSELECT * from data_name;`}
-        />
+        <React.Suspense fallback={<div>Loading</div>}>
+          <CodeEditorWindow
+            language="sql"
+            viewHorizontal={props.viewHorizontal}
+            code={`/*Enter your query here*/ \n\nSELECT * from data_name;`}
+          />
+        </React.Suspense>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <CodeEditorWindow
-          language="sql"
-          viewHorizontal={props.viewHorizontal}
-          code="SELECT * from data_name WHERE ID < 5;"
-        />
+        <React.Suspense fallback={<div>Loading</div>}>
+          <CodeEditorWindow
+            language="sql"
+            viewHorizontal={props.viewHorizontal}
+            code="SELECT * from data_name WHERE ID < 5;"
+          />
+        </React.Suspense>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <CodeEditorWindow
-          language="sql"
-          viewHorizontal={props.viewHorizontal}
-          code="SELECT * from data_name WHERE ID < 2;"
-        />
+        <React.Suspense fallback={<div>Loading</div>}>
+          <CodeEditorWindow
+            language="sql"
+            viewHorizontal={props.viewHorizontal}
+            code="SELECT * from data_name WHERE ID < 2;"
+          />
+        </React.Suspense>
       </TabPanel>
     </div>
   );
