@@ -38,6 +38,7 @@ Click [here](https://tinyurl.com/after-optimization) to see performance score.
 
 * Lazy loading with React.lazy() and React.Suspense.
 * Minification of CSS and JS files.
+* Asset optimization provided by Netlify
 * Optimisations for other lighthouse categories.
 
 ## Features Update for Upcoming Commit
